@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-import "./globals.css";
-import { CompanyProvider } from "./context/company-context";
+import type { Metadata } from 'next';
+import { Roboto } from 'next/font/google';
+import './globals.css';
+import { CompanyProvider } from './context/company-context';
 
 const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "500", "800"],
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '500', '800'],
 });
 
 export const metadata: Metadata = {
-  title: "Visualização da folha de pagamentos",
+  title: 'Visualização da folha de pagamentos',
   description:
-    "Aplicação web para visualizar de forma detalhada os dados da folha de pagamento",
+    'Aplicação web para visualizar de forma detalhada os dados da folha de pagamento',
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang='pt-br'>
       <CompanyProvider>
         <body className={`${roboto.className} antialiased`}>
           {children}
