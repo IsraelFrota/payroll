@@ -1,7 +1,7 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 
-type CardBaseProps = React.ComponentPropsWithoutRef<"div">;
+type CardBaseProps = React.ComponentPropsWithoutRef<'div'>;
 
 type CardComponent = React.FC<CardBaseProps> & {
   Title: React.FC<CardBaseProps>;
@@ -14,7 +14,7 @@ export const Card: CardComponent = ({ children, className, ...props }) => {
     <div
       {...props}
       className={clsx(
-        "w-full max-w-sm rounded-md overflow-hidden border bg-white/40 backdrop-blur-md shadow-md",
+        'w-full max-w-sm rounded-md overflow-hidden border bg-white/40 backdrop-blur-md shadow-md',
         className
       )}
     >

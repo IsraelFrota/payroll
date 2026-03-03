@@ -1,7 +1,7 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 
-type TableBaseProps = React.ComponentPropsWithoutRef<"table">;
+type TableBaseProps = React.ComponentPropsWithoutRef<'table'>;
 
 type TableComponent = React.FC<TableBaseProps> & {
   Title: React.FC<TableBaseProps>;
@@ -15,7 +15,7 @@ export const Table: TableComponent = ({ children, className, ...props }) => {
   return (
     <table
       {...props}
-      className={clsx("w-full text-xs", className)}
+      className={clsx('w-full text-xs', className)}
     >
       {children}
     </table>
@@ -48,7 +48,7 @@ Table.Row = ({ children, className }) => {
 
 Table.Cell = ({ children, className }) => {
   return (
-    <td className={clsx("px-3 py-2", className)}>
+    <td className={clsx('px-3 py-2', className)}>
       {children}
     </td>
   );
