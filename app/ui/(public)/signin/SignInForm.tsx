@@ -50,7 +50,7 @@ export function SignInForm() {
 			return;
 		}
 
-		router.replace('ui/dashboard');
+		router.replace('ui/panel');
 		router.refresh();
 	}
 

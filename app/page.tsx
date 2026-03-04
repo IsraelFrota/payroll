@@ -7,7 +7,7 @@ export default async function LoginPage() {
   const token = cookieStore.get('session')?.value;
 
   if (token) {
-    redirect('/ui/dashboard');
+    redirect('/ui/panel');
   }
 
   return <SignInForm />;
