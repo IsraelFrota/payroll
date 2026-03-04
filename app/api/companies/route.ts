@@ -38,7 +38,6 @@ export async function GET() {
     }
 
     const service = await getCompanyPayrollService();
-    // const result = await service.find();
     const result = await service.findByUserId(session.userId);
     
     return NextResponse.json(
