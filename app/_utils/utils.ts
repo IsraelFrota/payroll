@@ -19,5 +19,8 @@ export const currency = (value: number) =>
 export const formatDate = (value: string) => 
   new Date(value)
   .toLocaleDateString('pt-BR', {
-    timeZone: 'America/Sao_Paulo'
+    timeZone: 'America/Sao_Paulo',
+    day: 'numeric',
+    year: 'numeric',
+    month: 'numeric',
   });
