@@ -11,6 +11,12 @@ type Payroll = {
 		title: string;
 		value: number;
 	}[];
+	events: {
+		code: string;
+		description: string;
+		amount: number;
+		category: string;
+	}[];
 	details: {
 		obligation: string;
 		amount: number;

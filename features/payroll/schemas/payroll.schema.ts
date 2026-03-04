@@ -10,6 +10,26 @@ const summarySchema = z.object({
     .coerce.number(),
 });
 
+const eventSchema = z.object({
+  code: z
+    .string()
+    .trim()
+    .min(1),
+  
+  description: z
+    .string()
+    .trim()
+    .min(1),
+  
+  amount: z
+    .coerce.number(),
+  
+  category: z
+    .string()
+    .trim()
+    .min(1),
+}); 
+
 const detailSchema = z.object({
   obligation: z
     .string()
@@ -66,6 +86,10 @@ const payrollSchema = z.object({
     .array(summarySchema)
     .default([]),
 
+  events: z
+    .array(eventSchema)
+    .default([]),
+
   details: z
     .array(detailSchema)
     .default([]),
@@ -83,7 +107,8 @@ export type CreatePayrollDTO = z.infer<typeof payrollSchema>;
 export type UpdatePayrollDTO = z.infer<typeof updatePayrollSchema>;
 
 export {
-	detailSchema,
+	eventSchema,
+  detailSchema,
 	summarySchema,
 	payrollSchema,
 	evolutionSchema,

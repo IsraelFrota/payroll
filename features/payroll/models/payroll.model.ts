@@ -12,6 +12,13 @@ interface ISummary {
 	value: number;
 };
 
+interface IEvent {
+	code: string;
+	description: string;
+	amount: number;
+	category: string;
+};
+
 interface IDetails {
 	obligation: string;
 	amount: number;
@@ -37,6 +44,7 @@ export interface IPayroll {
 	paymentTermLabel: string;
 	sentAt: Date;
 	summary: ISummary[];
+	events: IEvent[];
 	details: IDetails[];
 	evolution: IEvolution[];
 	indicators: IIndicators;
@@ -55,6 +63,31 @@ const SummarySchema = new Schema<ISummary>(
 			type: Number,
 			required: true,
 		}
+	},
+	{ _id: false }
+);
+
+const EventSchema = new Schema<IEvent>(
+	{
+		code: {
+			type: String,
+			required: true,
+			trim: true,
+		},
+		description: {
+			type: String,
+			required: true,
+			trim: true,
+		},
+		amount: {
+			type: Number,
+			required: true,
+		},
+		category: {
+			type: String,
+			required: true,
+			trim: true,
+		},
 	},
 	{ _id: false }
 );
@@ -147,6 +180,12 @@ const payrollSchema = new Schema<IPayroll>({
 
 		summary: {
 			type: [SummarySchema],
+			default: [],
+			required: true,
+		},
+
+		events: {
+			type: [EventSchema],
 			default: [],
 			required: true,
 		},
